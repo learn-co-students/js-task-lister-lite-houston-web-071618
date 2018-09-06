@@ -15,24 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (newTask) {
 			document.getElementById('tasks').innerHTML += `
-				<li id="${newTask}">
+				<li>
 					${newTask}
-					<button id="${newTask}">DELETE</button>
+					<button>DELETE</button>
 				</li>
 			`
 		}
-
 	})
 
 	let listUl = document.querySelector('#list')
 
 	listUl.addEventListener('click', event => {
 		event.preventDefault();
-		let newTask = document.getElementById('new-task-description').value
+		event.target.parentElement.remove();
+		// let newTask = document.getElementById('new-task-description').value
 
-		if (document.getElementById('${newTask}')) {
-			document.getElementById('${newTask}').remove()
-		}
+		// if (document.getElementById('${newTask}')) {
+		// 	document.getElementById('${newTask}').remove()
+		// }
 	})
 
 });
